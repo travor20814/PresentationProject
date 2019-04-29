@@ -45,6 +45,12 @@ function SiteHeader() {
         activeStyle={styles.linkActive}>
         文繞圖(shape)
       </NavLink>
+      <NavLink
+        to={{ pathname: '/scroll-snap' }}
+        style={styles.linkBtn}
+        activeStyle={styles.linkActive}>
+        滾動事件
+      </NavLink>
     </header>
   );
 }

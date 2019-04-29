@@ -14,6 +14,7 @@ import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
 import ColorSwitchPage from './ColorSwitchPage.jsx';
 import ShapeArticlePage from './ShapeArticlePage.jsx';
+import ScrollSnapPage from './ScrollSnapPage.jsx';
 
 const styles = {
   placement: {
@@ -58,6 +59,7 @@ function MainBoard() {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/scroll-snap" component={ScrollSnapPage} />
               <Route path="/shape-article" component={ShapeArticlePage} />
               <Route path="/switch-theme" component={ColorSwitchPage} />
               <Route path="/" component={LandingWrapper} />
