@@ -6,12 +6,18 @@ const styles = {
     width: '100%',
     height: 'auto',
   },
+  titleUseVariable: {
+    fontSize: 24,
+    color: 'var(--secondary-color)',
+  },
 };
 
 function Landing() {
   return (
     <div style={styles.wrapper}>
-      Hello world!
+      <span style={styles.titleUseVariable}>
+        Welcome to my presentation!
+      </span>
     </div>
   );
 }

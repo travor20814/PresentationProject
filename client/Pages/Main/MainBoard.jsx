@@ -1,11 +1,16 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, {
+  memo,
+  useState,
+} from 'react';
 import {
   Switch,
   Route,
 } from 'react-router-dom';
 
+import { ThemeContext } from '../../Constant/context.js';
 // components
+import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
 
 const styles = {
@@ -18,11 +23,13 @@ const styles = {
     width: '100%',
     height: 'auto',
     minHeight: '100vh',
+    padding: 12,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
+    backgroundColor: 'var(--primary-color)',
   },
   mainView: {
     flex: 1,
@@ -39,20 +46,27 @@ type Props = {
 
 };
 
-class MainBoard extends PureComponent<Props> {
-  render() {
-    return (
-      <div style={styles.placement}>
-        <div style={styles.mainWrapper}>
+function MainBoard() {
+  const [themeClassName, setThemeClassName] = useState('white-theme');
+
+  return (
+    <div style={styles.placement}>
+      <ThemeContext.Provider
+        value={{
+          setThemeToBlack: () => setThemeClassName('black-theme'),
+          setThemeToWhite: () => setThemeClassName('white-theme'),
+        }}>
+        <div className={themeClassName} style={styles.mainWrapper}>
+          <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
               <Route path="/" component={LandingWrapper} />
             </Switch>
           </main>
         </div>
-      </div>
-    );
-  }
+      </ThemeContext.Provider>
+    </div>
+  );
 }
 
-export default MainBoard;
+export default memo(MainBoard);

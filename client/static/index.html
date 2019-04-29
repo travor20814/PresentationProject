@@ -33,6 +33,26 @@
         height: 100%;
         overflow: auto;
       }
+
+      :root {
+        --primary-color: red;
+        --secondary-color: blue;
+      }
+
+      .white-theme {
+        --primary-color: white;
+        --secondary-color: black;
+      }
+
+      .black-theme {
+        --primary-color: black;
+        --secondary-color: white;
+      }
+
+      .test-var {
+        font-size: 18px;
+        color: var(--primary-color);
+      }
     </style>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
