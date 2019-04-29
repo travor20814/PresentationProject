@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Presentation Project</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1' />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: '微軟正黑體', sans-serif;
+        -webkit-overflow-scrolling: touch;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        touch-action: manipulation;
+      }
+
+      html, body {
+        padding: 0;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        position: relative;
+        background-color: #fff;
+      }
+
+      #root {
+        height: 100%;
+        overflow: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="root" />
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="/bundle.js"></script>
+  </body>
+</html>
