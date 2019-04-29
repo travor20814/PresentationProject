@@ -11,6 +11,8 @@ import {
   Route,
 } from 'react-router-dom';
 
+import MainBoard from './Pages/Main/MainBoard.jsx';
+
 // Debug mode
 if (process.env.NODE_ENV !== 'production') {
   debug.enable('Presentation_Project:*');
@@ -36,7 +38,7 @@ function App({
         <MemoryRouter>
           <Router history={history}>
             <Switch>
-              <Route path="/" component={null} />
+              <Route path="/" component={MainBoard} />
             </Switch>
           </Router>
         </MemoryRouter>
