@@ -12,6 +12,7 @@ import { ThemeContext } from '../../Constant/context.js';
 // components
 import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
+import ColorSwitchPage from './ColorSwitchPage.jsx';
 
 const styles = {
   placement: {
@@ -60,6 +61,7 @@ function MainBoard() {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/switch-theme" component={ColorSwitchPage} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
           </main>
