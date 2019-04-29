@@ -14,12 +14,13 @@ const styles = {
     width: 'auto',
     height: 'auto',
     padding: '6px 12px',
+    margin: '0 12px 0 0',
     backgroundColor: 'transparent',
-    border: '1px solid #000',
+    border: '1px solid var(--secondary-color)',
     borderRadius: 3,
     fontSize: 16,
     fontWeight: 400,
-    color: '#000',
+    color: 'var(--secondary-color)',
     textAlign: 'center',
     textDecoration: 'none',
     cursor: 'pointer',
@@ -37,6 +38,12 @@ function SiteHeader() {
         style={styles.linkBtn}
         activeStyle={styles.linkActive}>
         主題切換功能
+      </NavLink>
+      <NavLink
+        to={{ pathname: '/shape-article' }}
+        style={styles.linkBtn}
+        activeStyle={styles.linkActive}>
+        文繞圖(shape)
       </NavLink>
     </header>
   );

@@ -13,6 +13,7 @@ import { ThemeContext } from '../../Constant/context.js';
 import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
 import ColorSwitchPage from './ColorSwitchPage.jsx';
+import ShapeArticlePage from './ShapeArticlePage.jsx';
 
 const styles = {
   placement: {
@@ -43,10 +44,6 @@ const styles = {
   },
 };
 
-type Props = {
-
-};
-
 function MainBoard() {
   const [themeClassName, setThemeClassName] = useState('white-theme');
 
@@ -61,6 +58,7 @@ function MainBoard() {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/shape-article" component={ShapeArticlePage} />
               <Route path="/switch-theme" component={ColorSwitchPage} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
