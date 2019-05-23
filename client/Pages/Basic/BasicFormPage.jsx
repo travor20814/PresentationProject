@@ -72,7 +72,7 @@ function BasicFormPage() {
 
           if (name !== 'rytass') {
             return {
-              [FORM_ERROR]: 'WRONG NAME.',
+              [FORM_ERROR]: 'WRONG NAME.', // submitError
             };
           }
 
