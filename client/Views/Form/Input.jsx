@@ -31,10 +31,8 @@ const styles = {
     outline: 0,
   },
   error: {
-    borderTop: '1px solid rgb(232, 67, 67)',
-    borderLeft: '1px solid rgb(232, 67, 67)',
-    borderBottom: '1px solid rgb(232, 67, 67)',
-    borderRight: '1px solid rgb(232, 67, 67)',
+    fontSize: 16,
+    color: 'rgb(241, 48, 94)',
   },
   disabled: {
     backgroundColor: '#9b9b9b',
@@ -49,7 +47,9 @@ type Props = {
     onChange: Function,
   },
   meta: {
+    touched: boolean,
     error: string,
+    submitError: string,
   },
   createRef: Function,
   style?: Object,
@@ -66,7 +66,9 @@ function Input({
     onChange,
   },
   meta: {
-    error,
+    touched,
+    error, // validate error
+    submitError, // submit error
   },
   createRef,
   style,
@@ -79,7 +81,6 @@ function Input({
       style={[
         styles.wrapper,
         wrapperStyle,
-        error && styles.error,
         disabled && styles.disabled,
       ]}>
       <input
@@ -98,6 +99,11 @@ function Input({
           styles.input,
           style,
         ]} />
+      {touched && (error || submitError) ? (
+        <span style={styles.error}>
+          {error || submitError}
+        </span>
+      ) : null}
     </div>
   );
 }
