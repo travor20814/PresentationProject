@@ -7,6 +7,7 @@ import {
 
 // components
 import LandingWrapper from './LandingWrapper.jsx';
+import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 
 const styles = {
   placement: {
@@ -18,6 +19,7 @@ const styles = {
     width: '100%',
     height: 'auto',
     minHeight: '100vh',
+    padding: 24,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -44,8 +46,10 @@ class MainBoard extends PureComponent<Props> {
     return (
       <div style={styles.placement}>
         <div style={styles.mainWrapper}>
+          <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/basic-form" component={null} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
           </main>

@@ -11,7 +11,7 @@ const styles = {
 function Landing() {
   return (
     <div style={styles.wrapper}>
-      Hello world!
+      Welcome to my presentation!
     </div>
   );
 }
