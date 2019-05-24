@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 // components
+import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
 
 const styles = {
@@ -18,6 +19,7 @@ const styles = {
     width: '100%',
     height: 'auto',
     minHeight: '100vh',
+    padding: 24,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -44,6 +46,7 @@ class MainBoard extends PureComponent<Props> {
     return (
       <div style={styles.placement}>
         <div style={styles.mainWrapper}>
+          <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
               <Route path="/" component={LandingWrapper} />
