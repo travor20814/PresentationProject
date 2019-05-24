@@ -45,6 +45,12 @@ function SiteHeader() {
         activeStyle={styles.linkActive}>
         正規化表單
       </NavLink>
+      <NavLink
+        to={{ pathname: '/bind-form' }}
+        style={styles.linkBtn}
+        activeStyle={styles.linkActive}>
+        互相影響表單
+      </NavLink>
     </header>
   );
 }

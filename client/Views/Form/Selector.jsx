@@ -4,7 +4,7 @@ import radium from 'radium';
 
 const styles = {
   selectGroup: {
-    width: 'auto',
+    flex: 1,
     height: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -21,7 +21,7 @@ const styles = {
     borderRadius: '0 1px 1px 0',
   },
   selector: {
-    width: 'auto',
+    width: '100%',
     height: 'auto',
     border: '1px solid #9b9b9b',
     backgroundColor: 'transparent',
@@ -76,6 +76,7 @@ function Selector({
   style,
   placeholder,
   disabled,
+  customOnChange,
   meta: {
     error,
   },
@@ -97,7 +98,13 @@ function Selector({
           ...customStyles,
         ]}
         value={value}
-        onChange={e => onChange(e.target.value)}>
+        onChange={(e) => {
+          onChange(e.target.value);
+
+          if (customOnChange) {
+            customOnChange(e.target.value);
+          }
+        }}>
         {placeholder ? (
           <option key="-1" value="-1">
             {placeholder}
