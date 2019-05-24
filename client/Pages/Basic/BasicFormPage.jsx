@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import radium from 'radium';
 import {
   Form,
   Field,
@@ -78,6 +79,10 @@ function BasicFormPage() {
 
           return null;
         }}
+        initialValues={{
+          name: 'Test name',
+          email: '123@gmail.com',
+        }}
         validate={(values) => {
           const errors = {};
 
@@ -130,4 +135,4 @@ function BasicFormPage() {
   );
 }
 
-export default memo(BasicFormPage);
+export default memo(radium(BasicFormPage));
