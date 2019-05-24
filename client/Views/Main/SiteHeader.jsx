@@ -49,7 +49,7 @@ function SiteHeader() {
         to={{ pathname: '/bind-form' }}
         style={styles.linkBtn}
         activeStyle={styles.linkActive}>
-        互相影響表單
+        互相影響表單(含優化)
       </NavLink>
     </header>
   );
