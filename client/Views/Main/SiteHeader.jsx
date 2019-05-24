@@ -39,6 +39,12 @@ function SiteHeader() {
         activeStyle={styles.linkActive}>
         基本表單
       </NavLink>
+      <NavLink
+        to={{ pathname: '/parser-form' }}
+        style={styles.linkBtn}
+        activeStyle={styles.linkActive}>
+        正規化表單
+      </NavLink>
     </header>
   );
 }

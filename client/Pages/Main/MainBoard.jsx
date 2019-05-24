@@ -9,6 +9,7 @@ import {
 import LandingWrapper from './LandingWrapper.jsx';
 import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import BasicFormPage from '../Basic/BasicFormPage.jsx';
+import ParserFormPage from '../Basic/ParserFormPage.jsx';
 
 const styles = {
   placement: {
@@ -50,6 +51,7 @@ class MainBoard extends PureComponent<Props> {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/parser-form" component={ParserFormPage} />
               <Route path="/basic-form" component={BasicFormPage} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
