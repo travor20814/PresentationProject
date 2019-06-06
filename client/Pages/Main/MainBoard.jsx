@@ -1,5 +1,7 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, {
+  memo,
+} from 'react';
 import {
   Switch,
   Route,
@@ -40,28 +42,22 @@ const styles = {
   },
 };
 
-type Props = {
-
-};
-
-class MainBoard extends PureComponent<Props> {
-  render() {
-    return (
-      <div style={styles.placement}>
-        <div style={styles.mainWrapper}>
-          <SiteHeader />
-          <main style={styles.mainView}>
-            <Switch>
-              <Route path="/bind-form" component={BindFormPage} />
-              <Route path="/parser-form" component={ParserFormPage} />
-              <Route path="/basic-form" component={BasicFormPage} />
-              <Route path="/" component={LandingWrapper} />
-            </Switch>
-          </main>
-        </div>
+function MainBoard() {
+  return (
+    <div style={styles.placement}>
+      <div style={styles.mainWrapper}>
+        <SiteHeader />
+        <main style={styles.mainView}>
+          <Switch>
+            <Route path="/bind-form" component={BindFormPage} />
+            <Route path="/parser-form" component={ParserFormPage} />
+            <Route path="/basic-form" component={BasicFormPage} />
+            <Route path="/" component={LandingWrapper} />
+          </Switch>
+        </main>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-export default MainBoard;
+export default memo(MainBoard);
