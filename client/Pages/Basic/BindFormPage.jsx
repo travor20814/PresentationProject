@@ -1,9 +1,17 @@
-import React, { memo } from 'react';
+import React, {
+  memo,
+  useContext,
+} from 'react';
 import {
   Form,
   FormSpy,
 } from 'react-final-form';
 
+import {
+  DispatchContext,
+  ReducerContext,
+} from '../../Constant/context';
+import { CACHE_INPUT } from '../../Constant/actions';
 // components
 import BindForm from '../../Views/BindForm.jsx';
 import Preview from '../../Views/Form/Preview.jsx';
@@ -36,6 +44,9 @@ let renderCount1 = 0;
 let renderCount2 = 0;
 
 function BindFormPage() {
+  const dispatch = useContext(DispatchContext);
+  const globalState = useContext(ReducerContext);
+
   return (
     <div style={styles.wrapper}>
       <Form
@@ -46,12 +57,17 @@ function BindFormPage() {
             email,
           } = values;
           console.log(cityId, zoneId, email);
+
+          dispatch({
+            type: CACHE_INPUT,
+            email: email || '',
+          });
           return null;
         }}
         initialValues={{
           cityId: -1,
           zoneId: -1,
-          email: '',
+          email: (globalState && globalState.email) || '',
         }}>
         {({
           values,
