@@ -8,6 +8,7 @@ import {
 // components
 import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
+import CSSExample from '../EmotionCSS/Example.jsx';
 
 const styles = {
   placement: {
@@ -49,6 +50,7 @@ class MainBoard extends PureComponent<Props> {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/emotion-css" component={CSSExample} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
           </main>

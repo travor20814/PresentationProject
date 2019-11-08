@@ -34,10 +34,10 @@ function SiteHeader() {
   return (
     <header style={styles.wrapper}>
       <NavLink
-        to={{ pathname: '/' }}
+        to={{ pathname: '/emotion-css' }}
         style={styles.linkBtn}
         activeStyle={styles.linkActive}>
-        連結1
+        Emotion css
       </NavLink>
     </header>
   );
