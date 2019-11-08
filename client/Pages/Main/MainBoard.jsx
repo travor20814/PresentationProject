@@ -6,9 +6,10 @@ import {
 } from 'react-router-dom';
 
 // components
-import SiteHeader from '../../Views/Main/SiteHeader.jsx';
-import LandingWrapper from './LandingWrapper.jsx';
-import CSSExample from '../EmotionCSS/Example.jsx';
+import SiteHeader from '../../Views/Main/SiteHeader';
+import LandingWrapper from './LandingWrapper';
+import CSSExample from '../EmotionCSS/Example';
+import CoreExample from '../EmotionCore/Example';
 
 const styles = {
   placement: {
@@ -50,6 +51,7 @@ class MainBoard extends PureComponent<Props> {
           <SiteHeader />
           <main style={styles.mainView}>
             <Switch>
+              <Route path="/emotion-core" component={CoreExample} />
               <Route path="/emotion-css" component={CSSExample} />
               <Route path="/" component={LandingWrapper} />
             </Switch>

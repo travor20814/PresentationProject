@@ -81,6 +81,10 @@ module.exports = {
     ],
   },
   resolve: {
+    extensions: [
+      '.jsx',
+      '.js',
+    ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
     },

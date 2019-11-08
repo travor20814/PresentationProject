@@ -39,6 +39,12 @@ function SiteHeader() {
         activeStyle={styles.linkActive}>
         Emotion css
       </NavLink>
+      <NavLink
+        to={{ pathname: '/emotion-core' }}
+        style={styles.linkBtn}
+        activeStyle={styles.linkActive}>
+        Emotion core
+      </NavLink>
     </header>
   );
 }
