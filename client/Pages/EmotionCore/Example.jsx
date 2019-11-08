@@ -48,10 +48,19 @@ const styles = {
   `,
 };
 
+const inline = {
+  customTitle: {
+    fontSize: 26,
+  },
+};
+
 function Example() {
   return (
     <div css={styles.wrapper}>
-      <h1 css={styles.title(true)}>
+      <h1
+        className="override-class"
+        css={styles.title(true)}
+        style={inline.customTitle}>
         My Custom Title
       </h1>
     </div>
