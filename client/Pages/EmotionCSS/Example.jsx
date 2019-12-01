@@ -27,7 +27,7 @@ const withBounceAnimation = css`
   animation-iteration-count: infinite;
 `;
 
-const styles = {
+const classes = {
   wrapper: css`
     width: 100%;
     display: flex;
@@ -50,8 +50,8 @@ const styles = {
 
 function Example() {
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.title(true)}>
+    <div className={classes.wrapper}>
+      <h1 className={classes.title(true)}>
         My Custom Title
       </h1>
     </div>
