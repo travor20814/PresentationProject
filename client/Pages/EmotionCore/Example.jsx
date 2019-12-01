@@ -1,6 +1,9 @@
 // @flow
 /** @jsx jsx */
 import { jsx, css, keyframes } from '@emotion/core';
+// components
+import Image from './Image';
+import Text from './Text';
 
 const bounceAnimate = keyframes`
   from, 20%, 53%, 80%, to {
@@ -46,6 +49,16 @@ const styles = {
       animation-name: none;
     }
   `,
+  mainWrapper: css`
+    width: 100%;
+    padding: 40px 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  `,
+  imageWrapper: css`
+    margin: 0 40px 0 0;
+  `,
 };
 
 const inline = {
@@ -63,6 +76,12 @@ function Example() {
         style={inline.customTitle}>
         My Custom Title
       </h1>
+      <div css={styles.mainWrapper}>
+        <div css={styles.imageWrapper}>
+          <Image />
+        </div>
+        <Text />
+      </div>
     </div>
   );
 }
