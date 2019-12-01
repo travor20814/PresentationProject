@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { css, keyframes } from 'emotion';
+import { cx, css, keyframes } from 'emotion';
 
 import Image from './Image';
 import Text from './Text';
@@ -64,7 +64,7 @@ const classes = {
 function Example() {
   return (
     <div className={classes.wrapper}>
-      <h1 className={classes.title(true)}>
+      <h1 className={cx(classes.title(true), 'override-class')}>
         My Custom Title
       </h1>
       <div className={classes.mainWrapper}>

@@ -65,8 +65,10 @@ const ImageWrapper = styled.div`
 function Example() {
   return (
     <Wrapper>
-      <Title withAnimation>
-        My custom title
+      <Title
+        withAnimation
+        className="override-class">
+        My Custom Title
       </Title>
       <MainWrapper>
         <ImageWrapper>
