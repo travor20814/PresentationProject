@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 // components
-import Landing from '../../Views/Main/Landing.jsx';
+import Landing from '../../Views/Main/Landing';
 
 const styles = {
   wrapper: {

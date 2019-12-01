@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable */
 import React, { PureComponent } from 'react';
 import {
   Switch,
@@ -10,6 +11,7 @@ import SiteHeader from '../../Views/Main/SiteHeader';
 import LandingWrapper from './LandingWrapper';
 import CSSExample from '../EmotionCSS/Example';
 import CoreExample from '../EmotionCore/Example';
+import StyledExample from '../EmotionStyled/Example';
 
 const styles = {
   placement: {
@@ -53,6 +55,7 @@ class MainBoard extends PureComponent<Props> {
             <Switch>
               <Route path="/emotion-core" component={CoreExample} />
               <Route path="/emotion-css" component={CSSExample} />
+              <Route path="/emotion-styled" component={StyledExample} />
               <Route path="/" component={LandingWrapper} />
             </Switch>
           </main>
