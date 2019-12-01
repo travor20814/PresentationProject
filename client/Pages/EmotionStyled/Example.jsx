@@ -3,6 +3,9 @@ import React from 'react';
 import { css, keyframes } from '@emotion/core';
 import styled from '@emotion/styled';
 
+import Image from './Image';
+import Text from './Text';
+
 const bounceAnimate = keyframes`
   from, 20%, 53%, 80%, to {
     transform: translate3d(0, 0, 0);
@@ -47,12 +50,30 @@ const Title = styled.h1`
   }
 `;
 
+const MainWrapper = styled.div`
+  width: 100%;
+  padding: 40px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+const ImageWrapper = styled.div`
+  margin: 0 40px 0 0;
+`;
+
 function Example() {
   return (
     <Wrapper>
       <Title withAnimation>
         My custom title
       </Title>
+      <MainWrapper>
+        <ImageWrapper>
+          <Image />
+        </ImageWrapper>
+        <Text />
+      </MainWrapper>
     </Wrapper>
   );
 }
