@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 
 // components
-import Landing from '../../Views/Main/Landing.jsx';
+import Landing from '../../Views/Main/Landing';
 
 const classes = {
   wrapper: css`

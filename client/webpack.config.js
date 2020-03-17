@@ -81,6 +81,15 @@ module.exports = {
     ],
   },
   resolve: {
+    mainFields: [
+      'browser',
+      'main',
+      'module',
+    ],
+    extensions: [
+      '.jsx',
+      '.js',
+    ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
     },

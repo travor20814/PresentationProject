@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 
 // components
-import SiteHeader from '../../Views/Main/SiteHeader.jsx';
-import LandingWrapper from './LandingWrapper.jsx';
+import SiteHeader from '../../Views/Main/SiteHeader';
+import LandingWrapper from './LandingWrapper';
 
 const classes = {
   placement: css`
