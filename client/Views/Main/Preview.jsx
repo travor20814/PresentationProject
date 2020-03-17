@@ -1,17 +1,18 @@
 // @flow
-import React, { memo } from 'react';
+import React from 'react';
+import { css } from 'emotion';
 
-const styles = {
-  wrapper: {
-    width: 500,
-    height: 'auto',
-    padding: 24,
-    margin: '12px 0',
-    backgroundColor: 'rgba(156, 156, 156, 0.4)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const classes = {
+  wrapper: css`
+    width: 500px;
+    height: auto;
+    padding: 24px;
+    margin: 12px 0;
+    background-color: rgba(156, 156, 156, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
 };
 
 type Props = {
@@ -24,10 +25,10 @@ function Preview({
   if (!values) return null;
 
   return (
-    <div style={styles.wrapper}>
+    <div className={classes.wrapper}>
       <pre>{JSON.stringify(values, 0, 2)}</pre>
     </div>
   );
 }
 
-export default memo(Preview);
+export default Preview;

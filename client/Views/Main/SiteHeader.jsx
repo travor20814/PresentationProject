@@ -1,50 +1,47 @@
-import React, { memo } from 'react';
-import radium from 'radium';
+// @flow
+import React from 'react';
+import { css } from 'emotion';
 import { NavLink } from 'react-router-dom';
 
-const styles = {
-  wrapper: {
-    width: '100%',
-    height: 80,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  linkBtn: {
-    width: 'auto',
-    height: 'auto',
-    padding: '6px 12px',
-    margin: '0 12px 0 0',
-    backgroundColor: 'transparent',
-    border: '1px solid #000',
-    borderRadius: 3,
-    fontSize: 16,
-    fontWeight: 400,
-    color: '#000',
-    textAlign: 'center',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  },
-  linkActive: {
-    backgroundColor: 'rgb(117, 179, 203)',
-  },
+const classes = {
+  wrapper: css`
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  `,
+  linkBtn: css`
+    width: auto;
+    height: auto;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  `,
+};
+
+const linkActiveStyle = {
+  backgroundColor: 'rgb(117, 179, 203)',
 };
 
 function SiteHeader() {
   return (
-    <header style={styles.wrapper}>
+    <header className={classes.wrapper}>
       <NavLink
         to={{ pathname: '/' }}
-        style={styles.linkBtn}
-        activeStyle={styles.linkActive}>
+        className={classes.linkBtn}
+        activeStyle={linkActiveStyle}>
         連結1
       </NavLink>
     </header>
   );
 }
 
-export default memo(
-  radium(
-    SiteHeader
-  )
-);
+export default SiteHeader;

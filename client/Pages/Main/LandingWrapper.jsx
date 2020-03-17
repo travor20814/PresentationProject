@@ -1,21 +1,22 @@
-import React, { memo } from 'react';
+import React from 'react';
+import { css } from 'emotion';
 
 // components
 import Landing from '../../Views/Main/Landing.jsx';
 
-const styles = {
-  wrapper: {
-    width: '100%',
-    height: '100%',
-  },
+const classes = {
+  wrapper: css`
+    width: 100%;
+    height: 100%;
+  `,
 };
 
 function LandingWrapper() {
   return (
-    <div style={styles.wrapper}>
+    <div className={classes.wrapper}>
       <Landing />
     </div>
   );
 }
 
-export default memo(LandingWrapper);
+export default LandingWrapper;

@@ -1,5 +1,6 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { css } from 'emotion';
 import {
   Switch,
   Route,
@@ -9,53 +10,47 @@ import {
 import SiteHeader from '../../Views/Main/SiteHeader.jsx';
 import LandingWrapper from './LandingWrapper.jsx';
 
-const styles = {
-  placement: {
-    width: '100%',
-    height: '100%',
-    overflow: 'auto',
-  },
-  mainWrapper: {
-    width: '100%',
-    height: 'auto',
-    minHeight: '100vh',
-    padding: 24,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    position: 'relative',
-  },
-  mainView: {
-    flex: 1,
-    width: '100%',
-    height: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-  },
+const classes = {
+  placement: css`
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  `,
+  mainWrapper: css`
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+  `,
+  mainView: css`
+    flex: 1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  `,
 };
 
-type Props = {
-
-};
-
-class MainBoard extends PureComponent<Props> {
-  render() {
-    return (
-      <div style={styles.placement}>
-        <div style={styles.mainWrapper}>
-          <SiteHeader />
-          <main style={styles.mainView}>
-            <Switch>
-              <Route path="/" component={LandingWrapper} />
-            </Switch>
-          </main>
-        </div>
+function MainBoard() {
+  return (
+    <div className={classes.placement}>
+      <div className={classes.mainWrapper}>
+        <SiteHeader />
+        <main className={classes.mainView}>
+          <Switch>
+            <Route path="/" component={LandingWrapper} />
+          </Switch>
+        </main>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default MainBoard;

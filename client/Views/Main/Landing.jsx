@@ -1,23 +1,20 @@
-import React, { memo } from 'react';
-import radium from 'radium';
+// @flow
+import React from 'react';
+import { css } from 'emotion';
 
-const styles = {
-  wrapper: {
-    width: '100%',
-    height: 'auto',
-  },
+const classes = {
+  wrapper: css`
+    width: 100%;
+    height: auto;
+  `,
 };
 
 function Landing() {
   return (
-    <div style={styles.wrapper}>
+    <div className={classes.wrapper}>
       Welcome to my presentation!
     </div>
   );
 }
 
-export default memo(
-  radium(
-    Landing
-  )
-);
+export default Landing;
