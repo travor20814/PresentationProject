@@ -53,7 +53,7 @@
     "koa-router": "^8.0.8",
     "koa-send": "^5.0.0",
     "koa-static": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mailgun-js": "^0.22.0",
     "moment": "^2.24.0",
     "mysql2": "^2.1.0",
