@@ -35,7 +35,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-server-koa": "^2.11.0",
     "babel-loader": "^8.0.6",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.7.2",
     "cross-fetch": "^3.0.4",
     "debug": "^4.1.1",
