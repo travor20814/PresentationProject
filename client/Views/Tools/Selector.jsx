@@ -29,6 +29,7 @@ const classes = {
   `,
   modalWrapper: css`
     position: absolute;
+    z-index: 1;
     left: 0;
     top: 40px;
     width: 100%;
@@ -38,6 +39,7 @@ const classes = {
     grid-template-columns: 1fr;
     grid-row-gap: 12px;
     box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.84);
+    background-color: #fff;
   `,
   option: css`
     width: 100%;
