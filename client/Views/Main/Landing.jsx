@@ -2,6 +2,7 @@
 import React from 'react';
 import { css } from 'emotion';
 
+import DefaultSelector from '../Tools/DefaultSelector';
 import Selector from '../Tools/Selector';
 
 const classes = {
@@ -24,6 +25,7 @@ const classes = {
     grid-template-columns: 160px 1fr;
     grid-column-gap: 24px;
     align-items: center;
+    margin: 0 0 24px;
   `,
   rowLabel: css`
     font-size: 16px;
@@ -39,7 +41,13 @@ function Landing() {
       <div className={classes.table}>
         <div className={classes.row}>
           <span className={classes.rowLabel}>
-            一般 Selector：
+            預設 Selector：
+          </span>
+          <DefaultSelector />
+        </div>
+        <div className={classes.row}>
+          <span className={classes.rowLabel}>
+            客製 Selector：
           </span>
           <Selector />
         </div>
