@@ -15,8 +15,6 @@ import MainBoard from './Pages/Main/MainBoard';
 function App({
   client,
 }: any) {
-  console.log(document.getElementById('portal-container'));
-
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
