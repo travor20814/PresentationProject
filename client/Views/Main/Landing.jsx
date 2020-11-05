@@ -4,6 +4,7 @@ import { css } from 'emotion';
 
 import DefaultSelector from '../Tools/DefaultSelector';
 import Selector from '../Tools/Selector';
+import ModalSelector from '../Tools/ModalSelector';
 
 const classes = {
   wrapper: css`
@@ -50,6 +51,12 @@ function Landing() {
             客製 Selector：
           </span>
           <Selector />
+        </div>
+        <div className={classes.row}>
+          <span className={classes.rowLabel}>
+            pop-up Selector：
+          </span>
+          <ModalSelector />
         </div>
       </div>
     </div>

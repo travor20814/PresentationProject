@@ -9,19 +9,24 @@ import {
   Route,
 } from 'react-router-dom';
 
+import { FloatingContainerContext } from './Constants/context';
 import MainBoard from './Pages/Main/MainBoard';
 
 function App({
   client,
 }: any) {
+  console.log(document.getElementById('portal-container'));
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <Switch>
-          <Route path="/">
-            <MainBoard />
-          </Route>
-        </Switch>
+        <FloatingContainerContext.Provider value={document.getElementById('portal-container')}>
+          <Switch>
+            <Route path="/">
+              <MainBoard />
+            </Route>
+          </Switch>
+        </FloatingContainerContext.Provider>
       </BrowserRouter>
     </ApolloProvider>
   );
