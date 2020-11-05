@@ -3,127 +3,134 @@
     "ecmaVersion": 7,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
+      "jsx": true
     }
   },
   "plugins": [
     "react",
     "flowtype",
-    "react-hooks",
+    "react-hooks"
   ],
   "globals": {
-    "document",
-    "localStorage",
-    "window",
-    "alert",
-    "location",
+    "document": "readonly",
+    "localStorage": "readonly",
+    "window": "readonly",
+    "alert": "readonly",
+    "location": "readonly",
+    "Path2D": "readonly",
+    "requestAnimationFrame": "readonly",
+    "API_HOST": "readonly",
+    "FormData": "readonly",
+    "XMLHttpRequest": "readonly",
+    "ics": "readonly",
+    "fetch": "readonly"
   },
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended",
+    "plugin:flowtype/recommended"
   ],
   "rules": {
     "react/jsx-fragments": [0],
     "padding-line-between-statements": [2, {
       "blankLine": "always",
       "prev": "*",
-      "next": "return",
+      "next": "return"
     }, {
       "blankLine": "always",
       "prev": [
         "const",
         "let",
-        "var",
+        "var"
       ],
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "any",
       "prev": [
         "const",
         "let",
-        "var",
+        "var"
       ],
       "next": [
         "const",
         "let",
-        "var",
-      ],
+        "var"
+      ]
     }, {
       "blankLine": "always",
       "prev": "directive",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "any",
       "prev": "directive",
-      "next": "directive",
+      "next": "directive"
     }, {
       "blankLine": "always",
       "prev": "block-like",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "always",
       "prev": "multiline-const",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "always",
       "prev": "multiline-let",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "always",
       "prev": "multiline-var",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "always",
       "prev": "switch",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "always",
       "prev": "import",
-      "next": "*",
+      "next": "*"
     }, {
       "blankLine": "any",
       "prev": "import",
-      "next": "import",
+      "next": "import"
     }, {
       "blankLine": "always",
       "prev": "*",
-      "next": "case",
+      "next": "case"
     }, {
       "blankLine": "any",
       "prev": "case",
-      "next": "case",
+      "next": "case"
     }, {
       "blankLine": "always",
       "prev": "*",
-      "next": "default",
+      "next": "default"
     }, {
       "blankLine": "any",
       "prev": "case",
-      "next": "default",
+      "next": "default"
     }],
     "no-multiple-empty-lines": [2, {
-      "max": 1,
+      "max": 1
     }],
     "no-bitwise": [0, {
       "allow": ["~"],
-      "int32Hint": true,
+      "int32Hint": true
     }],
     "react/jsx-closing-bracket-location": [2, {
       "nonEmpty": "after-props",
-      "selfClosing": "after-props",
+      "selfClosing": "after-props"
     }],
     "react/jsx-filename-extension": [0],
     "comma-dangle": [2, "always-multiline"],
     "jsx-a11y/label-has-for": [0],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "arrow-parens": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed"]
   },
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "16.13.0",
-    },
+      "version": "17.0.1"
+    }
   }
 }

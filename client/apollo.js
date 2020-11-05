@@ -4,7 +4,6 @@ import 'cross-fetch/polyfill';
 import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory/lib/inMemoryCache';
 import { ApolloLink } from 'apollo-link';
-// import jwtDecode from 'jwt-decode';
 import { HttpLink } from 'apollo-link-http';
 
 const httpLink = new HttpLink({

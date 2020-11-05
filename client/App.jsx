@@ -1,50 +1,30 @@
 // @flow
 
 import React from 'react';
-import debug from 'debug';
 import { ApolloProvider } from 'react-apollo';
-import { hot } from 'react-hot-loader';
-import { StyleRoot } from 'radium';
-import { Router, MemoryRouter } from 'react-router';
+import { hot } from 'react-hot-loader/root';
 import {
+  BrowserRouter,
   Switch,
   Route,
 } from 'react-router-dom';
 
-import MainBoard from './Pages/Main/MainBoard.jsx';
-
-// Debug mode
-if (process.env.NODE_ENV !== 'production') {
-  debug.enable('Presentation_Project:*');
-}
-
-const styles = {
-  root: {
-    width: '100%',
-    height: '100%',
-    display: 'block',
-    position: 'relative',
-    overflow: 'auto',
-  },
-};
+import MainBoard from './Pages/Main/MainBoard';
 
 function App({
-  history,
   client,
 }: any) {
   return (
     <ApolloProvider client={client}>
-      <StyleRoot style={styles.root}>
-        <MemoryRouter>
-          <Router history={history}>
-            <Switch>
-              <Route path="/" component={MainBoard} />
-            </Switch>
-          </Router>
-        </MemoryRouter>
-      </StyleRoot>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/">
+            <MainBoard />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </ApolloProvider>
   );
 }
 
-export default hot(module)(App);
+export default hot(App);

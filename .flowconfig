@@ -4,5 +4,7 @@
 
 [libs]
 decls/
+flow-typed/
 
 [options]
+module.file_ext=.graphql

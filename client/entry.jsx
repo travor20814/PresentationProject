@@ -1,24 +1,42 @@
 // @flow
-/* eslint global-require: 0 */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import App from './App.jsx';
-import {
-  history,
-  client,
-} from './global.js';
+import debug from 'debug';
+import { render } from 'react-dom';
+import 'moment/locale/zh-tw';
 
-(async () => {
+import App from './App';
+import {
+  client,
+} from './global';
+
+debug.enable('Presentation_Project:*');
+
+declare var module: {
+  hot: {
+    accept: Function,
+  },
+}
+
+function renderPage() {
   const root = document.getElementById('root');
 
   if (root) {
-    ReactDOM.render(
-      <AppContainer>
-        <App history={history} client={client} />
-      </AppContainer>,
+    render(
+      <App client={client} />,
       root,
     );
   }
-})();
+}
+
+async function init() {
+  if (module.hot) {
+    module.hot.accept('./App', () => {
+      renderPage();
+    });
+  }
+
+  renderPage();
+}
+
+init();
