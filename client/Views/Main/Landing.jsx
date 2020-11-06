@@ -61,9 +61,21 @@ function Landing() {
         </div>
         <div className={classes.row}>
           <span className={classes.rowLabel}>
+            pop-up Selector2：
+          </span>
+          <ModalSelector />
+        </div>
+        <div className={classes.row}>
+          <span className={classes.rowLabel}>
             Input：
           </span>
           <Input />
+        </div>
+        <div className={classes.row}>
+          <span className={classes.rowLabel}>
+            Required Input：
+          </span>
+          <Input required />
         </div>
       </div>
     </div>

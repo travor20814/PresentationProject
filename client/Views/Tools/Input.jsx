@@ -24,15 +24,24 @@ const classes = {
   `,
 };
 
-function Input() {
+function Input({
+  required,
+}: {
+  required?: boolean,
+}) {
   return (
     <div className={classes.wrapper}>
       <input
         type="text"
+        aria-required={required}
         placeholder="Type something..."
         className={classes.input} />
     </div>
   );
 }
+
+Input.defaultProps = {
+  required: false,
+};
 
 export default Input;

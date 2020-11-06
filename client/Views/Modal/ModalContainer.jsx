@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { css } from 'emotion';
 import ReactDOM from 'react-dom';
 
@@ -29,6 +29,11 @@ const classes = {
     visibility: hidden;
 
     ${shown ? containerShown : null};
+
+    &[open]:not(:focus-within) {
+      opacity: 0.99;
+      transition: opacity 0.01s ease-in;
+    }
   `,
   modalWrapper: css`
     width: auto;
@@ -59,18 +64,46 @@ const classes = {
 
 function ModalContainer({
   shown,
+  modalId,
   children,
   onClose,
 }: {
   shown?: boolean,
+  modalId: string,
   children: Node,
   onClose?: ?Function,
 }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    const { current: modal } = ref;
+
+    function forceFocus() {
+      const modalFocusableNodes = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+
+      if (modalFocusableNodes.length) {
+        modalFocusableNodes[0].focus();
+      }
+    }
+
+    if (modal) {
+      modal.addEventListener('transitionend', forceFocus);
+    }
+
+    return () => {
+      if (modal) {
+        modal.removeEventListener('transitionend', forceFocus);
+      }
+    };
+  }, []);
+
   return (
-    <div
+    <dialog
+      id={modalId}
+      ref={ref}
+      open={shown}
       aria-hidden={!shown}
       aria-modal="true"
-      role="dialog"
       className={classes.container(shown)}>
       <div className={classes.modalWrapper}>
         {children}
@@ -81,7 +114,7 @@ function ModalContainer({
           x
         </button>
       </div>
-    </div>
+    </dialog>
   );
 }
 
@@ -91,6 +124,7 @@ ModalContainer.defaultProps = {
 };
 
 export default ({
+  modalId,
   shown,
   children,
   onClose,
@@ -99,6 +133,7 @@ export default ({
     {container => (
       ReactDOM.createPortal(
         <ModalContainer
+          modalId={modalId}
           shown={shown}
           onClose={onClose}>
           {children}

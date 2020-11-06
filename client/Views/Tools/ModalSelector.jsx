@@ -1,5 +1,9 @@
 // @flow
-import React, { useState } from 'react';
+import React, {
+  useState,
+  useCallback,
+  useRef,
+} from 'react';
 import { css, cx } from 'emotion';
 
 import Modal from '../Modal/ModalContainer';
@@ -61,11 +65,27 @@ const options = [{
 function ModalSelector() {
   const [isModalOpen, toggleModalOpen] = useState(false);
   const [selectedValue, setValue] = useState(null);
+  const ref = useRef();
+
+  const onClose = useCallback(() => {
+    const { current: toggleBtn } = ref;
+
+    toggleModalOpen(false);
+
+    /** Force focus to button when modal closed */
+    if (toggleBtn) {
+      toggleBtn.focus();
+    }
+  }, []);
 
   return (
     <div className={cx(classes.wrapper, isModalOpen && classes.activeWrapper)}>
       <button
+        ref={ref}
         type="button"
+        aria-expanded={isModalOpen}
+        aria-controls="control-modal"
+        aria-haspopup="dialog"
         onClick={() => toggleModalOpen(prev => !prev)}
         className={classes.toggleBtn}>
         <span className={classes.selectedValue}>
@@ -73,8 +93,9 @@ function ModalSelector() {
         </span>
       </button>
       <Modal
+        modalId="control-modal"
         shown={isModalOpen}
-        onClose={() => toggleModalOpen(false)}>
+        onClose={onClose}>
         <div className={classes.modalWrapper}>
           {options.map(option => (
             <button
@@ -82,7 +103,7 @@ function ModalSelector() {
               type="button"
               onClick={() => {
                 setValue(option.name);
-                toggleModalOpen(false);
+                onClose();
               }}
               className={classes.option}>
               {option.name}
