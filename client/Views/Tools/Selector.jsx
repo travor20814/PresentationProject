@@ -61,7 +61,7 @@ const options = [{
   name: '選項2',
 }];
 
-const MODAL_ID = 'menu-modal';
+const MODAL_ID = 'option-modal-01';
 
 function Selector() {
   const [isModalOpen, toggleModalOpen] = useState(false);
@@ -71,9 +71,9 @@ function Selector() {
     <div className={cx(classes.wrapper, isModalOpen && classes.activeWrapper)}>
       <button
         type="button"
-        aria-expanded={isModalOpen}
-        aria-controls={MODAL_ID}
-        aria-haspopup="menu"
+        role="listbox"
+        aria-activedescendant={selectedValue}
+        aria-owns={MODAL_ID}
         onClick={() => toggleModalOpen(prev => !prev)}
         className={classes.toggleBtn}>
         <span className={classes.selectedValue}>
@@ -81,15 +81,13 @@ function Selector() {
         </span>
       </button>
       {isModalOpen ? (
-        <div
-          id={MODAL_ID}
-          role="menu"
-          aria-orientation="vertical"
-          className={classes.modalWrapper}>
+        <div id={MODAL_ID} className={classes.modalWrapper}>
           {options.map(option => (
             <button
               key={option.id}
-              role="menuitem"
+              id={option.name}
+              role="option"
+              aria-selected={selectedValue === option.name}
               type="button"
               onClick={() => {
                 setValue(option.name);

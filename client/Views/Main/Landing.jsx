@@ -40,7 +40,7 @@ const classes = {
 function Landing() {
   return (
     <div className={classes.wrapper}>
-      <div className={classes.table}>
+      <div aria-label="開始開始" className={classes.table}>
         <div className={classes.row}>
           <span className={classes.rowLabel}>
             預設 Selector：
