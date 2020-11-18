@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useState } from 'react';
 import { css } from 'emotion';
 
 import DefaultSelector from '../Tools/DefaultSelector';
@@ -38,9 +38,12 @@ const classes = {
 };
 
 function Landing() {
+  const [counter, setCounter] = useState(0);
+  const [counter2, setCounter2] = useState(0);
+
   return (
     <div className={classes.wrapper}>
-      <div aria-label="開始開始" className={classes.table}>
+      <div className={classes.table}>
         <div className={classes.row}>
           <span className={classes.rowLabel}>
             預設 Selector：
@@ -77,6 +80,26 @@ function Landing() {
           </span>
           <Input required />
         </div>
+        <div className={classes.row}>
+          <button
+            type="button"
+            aria-controls="display-counter display-counter2"
+            onClick={() => {
+              if (counter >= 4) {
+                setCounter2(prev => prev - 1);
+              } else {
+                setCounter(prev => prev + 1);
+              }
+            }}>
+            ++
+          </button>
+          <span id="display-counter" aria-live="polite" className={classes.rowLabel}>
+            {counter}
+          </span>
+        </div>
+        <span id="display-counter2" aria-live="assertive" className={classes.rowLabel}>
+          {counter2}
+        </span>
       </div>
     </div>
   );
